@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nuestra Galeria</title>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"> <!-- Añadir Google Fonts -->
+    </head>
+<body>
+    <div class="message-container"> <!-- Cuadro contenedor para los mensajes -->
+    <div class="container">
+        <h1 class="animated-title">Galería de Recuerdos</h1>
+        <div class="gallery">
+            <img src="images_k/1.jpeg" alt="Recuerdo 1" class="gallery-item">
+            <img src="images_k/2.jpeg" alt="Recuerdo 2" class="gallery-item">
+            <img src="images_k/3.jpeg" alt="Recuerdo 3" class="gallery-item">
+            <!-- Añade más imágenes aquí -->
+        </div>
+        <button class="gradient-button" onclick="window.location.href='more_photos.html'">Más fotos</button>
+
+        
+    </div>
+    <!-- Agrega estos botones dentro de tu archivo galeria.html -->
+    <div class="nav-buttons">
+        <button class="gradient-button" onclick="window.location.href='mensajes_especiales.html'">Ver Mensajes Especiales</button>
+        <button class="gradient-button" onclick="window.location.href='mensaje.html'">Ver Mensaje Especial</button>
+    </div>
+    
+
+
+    <!-- Modal para ampliar imagen -->
+    <div class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="imgModal">
+        <div class="caption"></div>
+    </div>
+    <!-- Agrega estos botones dentro de tu archivo galeria.html -->
+
+
+    <script src="scripts.js"></script>
+</body>
+</html>

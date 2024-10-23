@@ -1,0 +1,326 @@
+/* Importar la fuente Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Cambiar a la nueva fuente */
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #000000;
+}
+
+
+h1 {
+    font-family: 'Poppins', sans-serif; /* Asegúrate de que los encabezados también usen la misma fuente */
+    margin-bottom: 20px;
+    font-weight: 600; /* O cambiar a un peso que te guste */
+}
+
+.container {
+    text-align: center;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gallery-item {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.gallery-item:hover {
+    transform: scale(1.1);
+}
+
+/* Modal para las imágenes */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Botones flotantes */
+.gradient-button {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.gradient-button:hover {
+    transform: scale(1.1) translateY(-5px); /* Animación de flote */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Sombra más fuerte */
+}
+
+@media (max-width: 768px) {
+    .gallery-item {
+        width: 150px;
+        height: 150px;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+}
+
+.message {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    color: #000000;
+    margin: 20px 0;
+    text-align: center;
+    white-space: pre-wrap;
+    border-right: 2px solid #000000;
+    width: fit-content;
+    margin: 0 auto;
+    padding-right: 10px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% { border-right-color: #fff; }
+    50% { border-right-color: transparent; }
+    100% { border-right-color: #fff; }
+}
+
+.flower-animation {
+    position: relative;
+    height: 200px; /* Altura del contenedor de flores */
+    width: 100%; /* Ancho del contenedor de flores */
+    display: flex; /* Usar flex para disposición */
+    justify-content: space-between; /* Espacio entre las flores */
+    align-items: flex-end; /* Alinear flores al fondo del contenedor */
+    margin-bottom: 40px; /* Espacio inferior */
+}
+
+.flower {
+    width: 80px; /* Ajustar tamaño para mejor visualización */
+    height: auto; /* Mantener proporciones */
+    animation: float 4s ease-in-out infinite; /* Mantener animación */
+}
+
+/* Posiciones ajustadas para las flores */
+.flower:nth-child(1) {
+    position: absolute; /* Cambiar a absolute para más control */
+    left: 10%; /* Alinear más a la izquierda */
+    animation-delay: 0s; /* Sin retardo */
+}
+
+.flower:nth-child(2) {
+    position: absolute; /* Cambiar a absolute para más control */
+    right: 10%; /* Alinear más a la derecha */
+    animation-delay: 2s; /* Retardo para alternar movimiento */
+}
+@media (min-width: 768px) {
+    .flower-animation {
+        justify-content: space-between; /* Solo para pantallas grandes */
+    }
+    
+    .flower:nth-child(1) {
+        left: 15%;
+    }
+
+    .flower:nth-child(2) {
+        left: 85%;
+        transform: translateX(-100%);
+    }
+}
+/* Animación de flotación */
+@keyframes float {
+    0% {
+        transform: translateY(0); /* Comienza en su posición original */
+    }
+    50% {
+        transform: translateY(-20px); /* Se eleva */
+    }
+    100% {
+        transform: translateY(0); /* Regresa a su posición original */
+    }
+}
+
+@media (max-width: 100px) {
+    .flower {
+        width: 60px; /* Tamaño más pequeño para móviles */
+    }
+}
+
+
+/* Animación de subir y bajar del mensaje */
+.moving-text {
+    position: relative;
+    animation: moveUpDown 3s ease-in-out infinite;
+}
+
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.nav-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.gradient-button {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.gradient-button:hover {
+    transform: scale(1.1) translateY(-5px); /* Animación flotante */
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Ajusta la distancia hacia arriba según tu preferencia */
+    }
+}
+
+h1 {
+    margin-bottom: 20px;
+    animation: bounce 2s infinite; /* Añadir animación de rebote */
+}
+.animated-title {
+    animation: bounce 2s infinite; /* Aplicar la animación de rebote */
+}
+.special-messages {
+    display: flex;
+    flex-direction: column; /* Apilar los cuadros verticalmente */
+    gap: 20px; /* Espacio entre los cuadros */
+    margin: 20px 0; /* Espacio alrededor de la sección */
+}
+.message-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Color blanco con opacidad */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 20px; /* Espacio interno alrededor de los mensajes */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra para darle profundidad */
+    margin: 20px auto; /* Margen automático para centrar */
+    max-width: 90%; /* Ancho máximo del contenedor */
+    width: 90%; /* Ancho del contenedor */
+}
+
+.message-box {
+    margin: 10px 0; /* Espacio entre los mensajes */
+    font-size: 1.2rem; /* Tamaño de fuente */
+    color: #333; /* Color del texto en el cuadro */
+    opacity: 0; /* Ocultar inicialmente para la animación */
+    animation: slideIn 0.5s forwards; /* Animación de deslizamiento */
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Borde sutil */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 10px; /* Espacio interno */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+}
+
+.message-box:hover {
+    transform: scale(1.05); /* Aumentar el tamaño ligeramente */
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al hacer hover */
+}
+
+/* Media queries para mejor adaptabilidad */
+@media (max-width: 768px) {
+    .message-box {
+        font-size: 1rem; /* Reducir el tamaño de fuente en pantallas pequeñas */
+    }
+
+    .message-container {
+        padding: 15px; /* Reducir el espacio interno */
+    }
+}
+
+
+/* Resto del CSS como se mencionó anteriormente */
+
+
+.message-box:nth-child(1) {
+    animation-delay: 0.2s; /* Retraso para el primer mensaje */
+}
+.message-box:nth-child(2) {
+    animation-delay: 0.4s; /* Retraso para el segundo mensaje */
+}
+.message-box:nth-child(3) {
+    animation-delay: 0.6s; /* Retraso para el tercer mensaje */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px); /* Deslizar desde abajo */
+        opacity: 0; /* Oculto inicialmente */
+    }
+    to {
+        transform: translateY(0); /* Volver a la posición original */
+        opacity: 1; /* Totalmente visible */
+    }
+}
